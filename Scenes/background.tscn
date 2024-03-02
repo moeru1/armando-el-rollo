@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5n2koq24am2s"]
+
+[ext_resource type="Texture2D" uid="uid://bslwfuvvx0lc4" path="res://Assets/Background/BACKGROUND OFICIAL.png" id="1_0jdsq"]
+[ext_resource type="Script" path="res://Scenes/object_gen.gd" id="2_dx4eh"]
+
+[node name="Background" type="Sprite3D"]
+centered = false
+transparent = false
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_0jdsq")
+script = ExtResource("2_dx4eh")
+speed = 6.0
+del_distance = 25

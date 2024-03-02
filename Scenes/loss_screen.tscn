@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3lt5wl7lapdd"]
+
+[ext_resource type="Script" path="res://Scenes/loss_screen.gd" id="1_3i8m8"]
+[ext_resource type="AudioStream" uid="uid://cja20afev65ro" path="res://Assets/Audio/button_press_sfx.wav" id="2_qhe40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hoski"]
+bg_color = Color(0.772549, 0.545098, 0.345098, 1)
+
+[sub_resource type="ImageTexture" id="ImageTexture_vm5f6"]
+
+[node name="loss_screen" type="CanvasLayer"]
+script = ExtResource("1_3i8m8")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hoski")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 282.0
+offset_right = 677.0
+offset_bottom = 345.0
+text = "Press to go back to menu"
+icon = SubResource("ImageTexture_vm5f6")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="Panel/Button"]
+stream = ExtResource("2_qhe40")
+volume_db = 4.0
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
