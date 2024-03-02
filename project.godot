@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AR Test"
-run/main_scene="res://LoadingScreen/test.tscn"
+run/main_scene="res://LoadingScreens/menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/show_image=false
