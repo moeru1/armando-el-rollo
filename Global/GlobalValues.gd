@@ -6,7 +6,7 @@ var loss_screen_path: String = "res://LoadingScreens/loss_screen.tscn"
 var menu_screen_path: String = "res://LoadingScreens/menu.tscn"
 
 #Game related values
-var score: int = 0
 var high_score: int = 0
-var speed_modifier:float = 0.01
+
+var speed_modif: float = 1.0
 

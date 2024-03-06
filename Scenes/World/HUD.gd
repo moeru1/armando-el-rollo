@@ -9,4 +9,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	score_label	.set_text("Score: {score}".format({"score": GlobalValues.score}))
+	score_label	.set_text("Score: {score}".format({"score": get_parent().score}))

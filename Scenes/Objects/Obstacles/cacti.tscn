@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsckeijg6p2mf"]
+[gd_scene load_steps=7 format=3 uid="uid://bsckeijg6p2mf"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/Obstacles/obstacle.gd" id="1_fb7sp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bjob6"]
 size = Vector3(4.0625, 1.97479, 0.749863)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_drw60"]
+albedo_color = Color(0.611765, 0, 0.611765, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns66q"]
 resource_name = "TRONCO ARBOL.003"
@@ -60,6 +63,7 @@ shape = SubResource("BoxShape3D_bjob6")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.682603, 0, 0.0714332, 0, 0.68633, 0, -0.0714332, 0, 0.682603, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_drw60")
 mesh = SubResource("ArrayMesh_5krok")
 skeleton = NodePath("")
 
