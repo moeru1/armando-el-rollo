@@ -3,4 +3,4 @@ extends CanvasLayer
 func _on_button_pressed():
 	button_sound.play()
 	LoadManager.load_scene("res://Scenes/World/level.tscn")
-	MusicPlayer.play_song("Armando_Gameplay_ost")
+	MusicPlayer.play_song(GlobalValues.gameplay_music_path)
