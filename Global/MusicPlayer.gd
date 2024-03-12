@@ -5,7 +5,7 @@ var fading: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_child(dummy_player)
-	stream = load("res://Assets/Audio/Soundtrack/Armando_Titlescreen_ost.wav")
+	stream = load(GlobalValues.menu_music_path)
 	play()
 
 func _process(delta):
@@ -21,8 +21,8 @@ func _process(delta):
 			fading = false
 		
 		
-func play_song(song_name) -> void:
-	dummy_player.stream = load("res://Assets/Audio/Soundtrack/" + song_name + ".wav")
+func play_song(song_path) -> void:
+	dummy_player.stream = load(song_path)
 	dummy_player.volume_db = -60
 	dummy_player.play()
 	fading = true
