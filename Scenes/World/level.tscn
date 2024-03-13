@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3u0uvlxjgisc"]
+[gd_scene load_steps=17 format=3 uid="uid://d3u0uvlxjgisc"]
 
 [ext_resource type="Script" path="res://Scenes/World/level.gd" id="1_wrax7"]
 [ext_resource type="Script" path="res://Scenes/Generators/Generator.gd" id="2_7v2ls"]
 [ext_resource type="Script" path="res://Scenes/Generators/Background_Generator.gd" id="3_krx3s"]
 [ext_resource type="PackedScene" uid="uid://4hcdv7npwd0d" path="res://Scenes/Player/player.tscn" id="4_gt5q1"]
+[ext_resource type="Script" path="res://Scenes/Generators/FallingGenerator.gd" id="4_ydstg"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://Assets/textures/grids/Dark/texture_05.png" id="6_v2xlb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ysum8"]
@@ -58,11 +59,6 @@ script = ExtResource("2_7v2ls")
 amount = 20
 spawn_objects = true
 
-[node name="Timer" type="Timer" parent="Generators/ObstacleGenerator"]
-wait_time = 4.0
-one_shot = true
-autostart = true
-
 [node name="SpawnCooldown" type="Timer" parent="Generators/ObstacleGenerator"]
 autostart = true
 
@@ -71,6 +67,18 @@ script = ExtResource("3_krx3s")
 amount = 3
 offset = 19.183
 pos_offset = Vector3(0, 0, -1.5)
+
+[node name="FallingGenerator" type="Node3D" parent="Generators"]
+script = ExtResource("4_ydstg")
+spawn_objects = true
+
+[node name="SpawnCooldown" type="Timer" parent="Generators/FallingGenerator"]
+autostart = true
+
+[node name="Timer" type="Timer" parent="Generators"]
+wait_time = 4.0
+one_shot = true
+autostart = true
 
 [node name="World" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.073, 0, 0)
@@ -132,14 +140,16 @@ jump_velocity = 8
 
 [node name="PerspectiveCam" type="Camera3D" parent="World"]
 transform = Transform3D(0.941629, 0, 0.336652, 0, 1, 0, -0.336652, 0, 0.941629, 7.29602, 2.53924, 6.17735)
+current = true
 
 [node name="OrthogonalCam" type="Camera3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10987, 5.02229, 1.95513)
 projection = 1
-current = true
 size = 10.2792
 
-[connection signal="timeout" from="Generators/ObstacleGenerator/Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Generators/ObstacleGenerator/Timer" to="Generators/ObstacleGenerator" method="_on_timer_timeout"]
-[connection signal="timeout" from="Generators/ObstacleGenerator/Timer" to="Generators/BackgroundGenerator" method="_on_timer_timeout"]
 [connection signal="timeout" from="Generators/ObstacleGenerator/SpawnCooldown" to="Generators/ObstacleGenerator" method="_on_spawn_cooldown_timeout"]
+[connection signal="timeout" from="Generators/FallingGenerator/SpawnCooldown" to="Generators/FallingGenerator" method="_on_spawn_cooldown_timeout"]
+[connection signal="timeout" from="Generators/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Generators/Timer" to="Generators/ObstacleGenerator" method="_on_timer_timeout"]
+[connection signal="timeout" from="Generators/Timer" to="Generators/BackgroundGenerator" method="_on_timer_timeout"]
+[connection signal="timeout" from="Generators/Timer" to="Generators/FallingGenerator" method="_on_timer_timeout"]
