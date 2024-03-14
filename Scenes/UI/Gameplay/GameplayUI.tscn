@@ -33,24 +33,24 @@ text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="PanelContainer" parent="Socreboard"]
+[node name="Roll_panel" type="PanelContainer" parent="Socreboard"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_3mbt0")
 
-[node name="GridContainer" type="GridContainer" parent="Socreboard/Timer"]
+[node name="GridContainer" type="GridContainer" parent="Socreboard/Roll_panel"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="Socreboard/Timer/GridContainer"]
+[node name="TextureRect" type="TextureRect" parent="Socreboard/Roll_panel/GridContainer"]
 layout_mode = 2
 texture = ExtResource("3_2p0xp")
 expand_mode = 3
 
-[node name="Score" type="Label" parent="Socreboard/Timer/GridContainer"]
+[node name="RollScore" type="Label" parent="Socreboard/Roll_panel/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0000
@@ -59,6 +59,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="PanelContainer" parent="."]
+visible = false
 offset_left = 195.0
 offset_top = 40.0
 offset_right = 331.0
@@ -86,11 +87,13 @@ text = "00:00:00
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Pause" type="TextureButton" parent="."]
 offset_left = 34.0
 offset_top = 9.0
-offset_right = 165.0
-offset_bottom = 136.0
+offset_right = 137.0
+offset_bottom = 110.0
 texture_normal = ExtResource("4_7m1n4")
 ignore_texture_size = true
 stretch_mode = 0
+
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

@@ -51,27 +51,6 @@ environment = SubResource("Environment_s3tq1")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Generators" type="Node3D" parent="."]
-
-[node name="ObstacleGenerator" type="Node3D" parent="Generators"]
-script = ExtResource("2_7v2ls")
-amount = 20
-spawn_objects = true
-
-[node name="Timer" type="Timer" parent="Generators/ObstacleGenerator"]
-wait_time = 4.0
-one_shot = true
-autostart = true
-
-[node name="SpawnCooldown" type="Timer" parent="Generators/ObstacleGenerator"]
-autostart = true
-
-[node name="BackgroundGenerator" type="Node3D" parent="Generators"]
-script = ExtResource("3_krx3s")
-amount = 3
-offset = 19.183
-pos_offset = Vector3(0, 0, -1.5)
-
 [node name="World" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.073, 0, 0)
 
@@ -139,7 +118,29 @@ projection = 1
 current = true
 size = 10.2792
 
-[connection signal="timeout" from="Generators/ObstacleGenerator/Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Generators/ObstacleGenerator/Timer" to="Generators/ObstacleGenerator" method="_on_timer_timeout"]
-[connection signal="timeout" from="Generators/ObstacleGenerator/Timer" to="Generators/BackgroundGenerator" method="_on_timer_timeout"]
-[connection signal="timeout" from="Generators/ObstacleGenerator/SpawnCooldown" to="Generators/ObstacleGenerator" method="_on_spawn_cooldown_timeout"]
+[node name="Generators" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.073, 0, 0)
+
+[node name="ObstacleGenerator" type="Node3D" parent="World/Generators"]
+script = ExtResource("2_7v2ls")
+amount = 20
+spawn_objects = true
+
+[node name="Timer" type="Timer" parent="World/Generators/ObstacleGenerator"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="SpawnCooldown" type="Timer" parent="World/Generators/ObstacleGenerator"]
+autostart = true
+
+[node name="BackgroundGenerator" type="Node3D" parent="World/Generators"]
+script = ExtResource("3_krx3s")
+amount = 3
+offset = 19.183
+pos_offset = Vector3(0, 0, -1.5)
+
+[connection signal="timeout" from="World/Generators/ObstacleGenerator/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="World/Generators/ObstacleGenerator/Timer" to="World/Generators/ObstacleGenerator" method="_on_timer_timeout"]
+[connection signal="timeout" from="World/Generators/ObstacleGenerator/Timer" to="World/Generators/BackgroundGenerator" method="_on_timer_timeout"]
+[connection signal="timeout" from="World/Generators/ObstacleGenerator/SpawnCooldown" to="World/Generators/ObstacleGenerator" method="_on_spawn_cooldown_timeout"]
