@@ -7,10 +7,6 @@ bg_color = Color(0, 0, 0, 0.101961)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74aa5"]
 bg_color = Color(0, 0, 0, 0.360784)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [resource]
 default_font = ExtResource("1_40nh0")

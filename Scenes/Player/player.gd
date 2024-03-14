@@ -14,14 +14,8 @@ func _ready():
 	score = 0
 
 func _process(delta):
-	add_score(ceili(score_mult/10))
+	score += ceili(score_mult/10)
 
-func process_high_score():
-	if score > GlobalValues.high_score:
-		GlobalValues.high_score = score
-
-func add_score(points):
-	score += points
 
 func _physics_process(delta):
 	if not is_on_floor():
