@@ -1,25 +1,83 @@
-[gd_scene load_steps=2 format=3 uid="uid://m5c4sm81ad66"]
+[gd_scene load_steps=5 format=3 uid="uid://m5c4sm81ad66"]
 
 [ext_resource type="Script" path="res://Scenes/World/HUD.gd" id="1_3g2n1"]
+[ext_resource type="Theme" uid="uid://n8d1v8f1no87" path="res://Scenes/UI/theme.tres" id="2_3mbt0"]
+[ext_resource type="Texture2D" uid="uid://b7bxdshk8edaw" path="res://Assets/UI/frijol.png" id="3_2hr06"]
+[ext_resource type="Texture2D" uid="uid://j5so1rg02glu" path="res://Assets/UI/Botón de pausa.png" id="4_7m1n4"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer"]
 script = ExtResource("1_3g2n1")
 
-[node name="GameplayUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Socreboard" type="GridContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -172.0
+offset_top = 29.0
+offset_right = -35.0
+offset_bottom = 117.0
+grow_horizontal = 0
+theme_override_constants/v_separation = 13
 
-[node name="Score" type="Label" parent="GameplayUI"]
-offset_right = 131.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 45
-text = "Score:"
+[node name="PanelContainer" type="PanelContainer" parent="Socreboard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_3mbt0")
 
-[node name="High_score" type="Label" parent="GameplayUI"]
-offset_left = 788.0
-offset_right = 1032.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 45
-text = "High Score:"
+[node name="Score" type="Label" parent="Socreboard/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="Socreboard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_3mbt0")
+
+[node name="Score" type="Label" parent="Socreboard/PanelContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="PanelContainer" parent="."]
+offset_left = 195.0
+offset_top = 40.0
+offset_right = 331.0
+offset_bottom = 111.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_3mbt0")
+
+[node name="GridContainer" type="GridContainer" parent="Timer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Timer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_2hr06")
+expand_mode = 3
+
+[node name="Score" type="Label" parent="Timer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "00:00:00
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 34.0
+offset_top = 9.0
+offset_right = 165.0
+offset_bottom = 136.0
+texture_normal = ExtResource("4_7m1n4")
+ignore_texture_size = true
+stretch_mode = 0

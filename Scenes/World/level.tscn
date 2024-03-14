@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3u0uvlxjgisc"]
+[gd_scene load_steps=17 format=3 uid="uid://d3u0uvlxjgisc"]
 
 [ext_resource type="Script" path="res://Scenes/World/level.gd" id="1_wrax7"]
 [ext_resource type="Script" path="res://Scenes/Generators/Generator.gd" id="2_7v2ls"]
 [ext_resource type="Script" path="res://Scenes/Generators/Background_Generator.gd" id="3_krx3s"]
+[ext_resource type="PackedScene" uid="uid://bpmttw235hsdf" path="res://Scenes/Objects/Obstacles/cacti.tscn" id="3_uw53x"]
 [ext_resource type="PackedScene" uid="uid://4hcdv7npwd0d" path="res://Scenes/Player/player.tscn" id="4_gt5q1"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://Assets/textures/grids/Dark/texture_05.png" id="6_v2xlb"]
 
@@ -57,6 +58,7 @@ shadow_enabled = true
 script = ExtResource("2_7v2ls")
 amount = 20
 spawn_objects = true
+object_Scene = ExtResource("3_uw53x")
 
 [node name="Timer" type="Timer" parent="Generators/ObstacleGenerator"]
 wait_time = 4.0

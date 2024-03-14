@@ -15,6 +15,7 @@ var countdown:int = 0
 
 #Loading Obstacle Scenes
 var cacti_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/cacti.tscn")
+@export var object_Scene: PackedScene
 var obstacle_types: Array[PackedScene] = [cacti_scene]
 var obs_count: int = 4
 
