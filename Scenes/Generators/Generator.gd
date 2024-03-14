@@ -12,16 +12,13 @@ extends Node3D
 
 var active: bool = false
 var countdown:int = 0
-var random_location: RandomLocation
+var random_location: RandomLocation = RandomLocation.new()
 
 #Loading Obstacle Scenes
 var cacti_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/cacti.tscn")
 var obstacle_types: Array[Callable]  = [random_location.random_cacti, random_location.random_green]
 var obs_count: int = 4
 
-func _init():
-	random_location = RandomLocation.new()
-	
 func spawn_tiles():
 	var rand_int =  randi_range(1,100)
 	if (rand_int <= spawn_probability):
