@@ -1,6 +1,6 @@
 extends CanvasLayer
-@onready var score_label: Label = $Score
-@onready var h_score_label: Label = $High_score
+@onready var score_label: Label = $GameplayUI/Score
+@onready var h_score_label: Label = $GameplayUI/High_score
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

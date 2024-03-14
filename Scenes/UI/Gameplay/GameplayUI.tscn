@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://m5c4sm81ad66"]
+
+[ext_resource type="Script" path="res://Scenes/World/HUD.gd" id="1_3g2n1"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_3g2n1")
+
+[node name="GameplayUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="GameplayUI"]
+offset_right = 131.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 45
+text = "Score:"
+
+[node name="High_score" type="Label" parent="GameplayUI"]
+offset_left = 788.0
+offset_right = 1032.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 45
+text = "High Score:"
