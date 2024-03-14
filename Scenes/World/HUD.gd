@@ -1,12 +1,12 @@
 extends CanvasLayer
-@onready var score_label: Label = $GameplayUI/Score
-@onready var h_score_label: Label = $GameplayUI/High_score
+@onready var score_label: Label = $"../UI/Socreboard/Score_panel/ScoreLabel"
+@onready var roll_score_label: Label = $Socreboard/Roll_panel/GridContainer/RollScore
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	h_score_label.set_text("High score: {score}".format({"score": GlobalValues.high_score}))
+	roll_score_label.set_text("{score}".format({"score": "0000"}))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	score_label	.set_text("Score: {score}".format({"score": get_parent().score}))
+	score_label	.set_text("{score}".format({"score": get_parent().score}))

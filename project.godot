@@ -21,6 +21,7 @@ boot_splash/show_image=false
 GlobalValues="*res://Global/GlobalValues.gd"
 LoadManager="*res://Global/LoadManager.gd"
 MusicPlayer="*res://Global/MusicPlayer.gd"
+Test="*res://Global/test.gd"
 
 [input]
 
