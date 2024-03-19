@@ -153,3 +153,4 @@ size = 10.2792
 [connection signal="timeout" from="Generators/Timer" to="Generators/ObstacleGenerator" method="_on_timer_timeout"]
 [connection signal="timeout" from="Generators/Timer" to="Generators/BackgroundGenerator" method="_on_timer_timeout"]
 [connection signal="timeout" from="Generators/Timer" to="Generators/FallingGenerator" method="_on_timer_timeout"]
+
