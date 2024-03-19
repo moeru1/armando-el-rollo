@@ -70,6 +70,7 @@ pos_offset = Vector3(0, 0, -1.5)
 
 [node name="FallingGenerator" type="Node3D" parent="Generators"]
 script = ExtResource("4_ydstg")
+spawn_objects = true
 
 [node name="SpawnCooldown" type="Timer" parent="Generators/FallingGenerator"]
 autostart = true

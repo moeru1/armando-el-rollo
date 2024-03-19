@@ -10,6 +10,7 @@ func _ready():
 
 func _process(delta):
 	position.y -= speed * delta
+	position.x -= speed * delta
 	if position.y < del_distance:
 		queue_free()
 

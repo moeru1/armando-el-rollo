@@ -11,19 +11,17 @@ extends Node3D
 
 var active: bool = false
 var countdown:int = 0
-
 #Loading Obstacle Scenes
-var green_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/green_bean.tscn")
-var obstacle_types: Array[PackedScene] = [green_scene]
+var random_location: RandomLocation = RandomLocation.new()
+var obstacle_types: Array[Callable] = [random_location.random_green]
 var obs_count: int = 4
 
-func spawn_tiles(x, y):
+
+func spawn_tiles():
 	var rand_int =  randi_range(1,100)
 	if (rand_int <= spawn_probability):
 		var obstacle = obstacle_types[randi() % obstacle_types.size()]
-		var obs_instance = obstacle.instantiate()
-		obs_instance.position.x = x
-		obs_instance.position.y = y
+		var obs_instance = obstacle.call()
 		add_child(obs_instance)
 
 func _on_timer_timeout():
@@ -32,10 +30,6 @@ func _on_timer_timeout():
 func _on_spawn_cooldown_timeout():
 	if not (active and spawn_objects): 
 		return
-	var rand_int =  randi_range(1,100)
-	if (rand_int > spawn_probability):
-		return
-	var rand_x = randi_range(1, 19)
-	spawn_tiles(rand_x, 10)
+	spawn_tiles()
 	
 		

@@ -16,7 +16,7 @@ var random_location: RandomLocation = RandomLocation.new()
 
 #Loading Obstacle Scenes
 var cacti_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/cacti.tscn")
-var obstacle_types: Array[Callable]  = [random_location.random_cacti, random_location.random_green]
+var obstacle_types: Array[Callable]  = [random_location.random_cacti]
 var obs_count: int = 4
 
 func spawn_tiles():
