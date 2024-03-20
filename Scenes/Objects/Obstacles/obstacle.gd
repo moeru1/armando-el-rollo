@@ -16,7 +16,4 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("player"):
-	#	LoadManager.load_scene(GlobalValues.loss_screen_path)
-	#	MusicPlayer.play_song(GlobalValues.gameover_music_path)
-		if body.score > GlobalValues.high_score:
-			GlobalValues.high_score = body.score
+		body.lose()

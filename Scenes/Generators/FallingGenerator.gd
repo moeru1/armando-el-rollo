@@ -1,6 +1,5 @@
 extends Node3D
 
-@onready var level_node: Node3D = $"../.."
 
 @export var amount: int = 15
 @export var offset: int = 2

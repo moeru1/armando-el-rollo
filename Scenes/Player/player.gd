@@ -7,14 +7,19 @@ extends CharacterBody3D
 @export var score_mult: float = 3.0
 
 @onready var anim_player: AnimationTree = $AnimationTree
+@onready var loss_screen_sceme: CanvasLayer = $loss_screen
+@onready var UI: CanvasLayer = $UI
+var loss_music_player: AudioStreamPlayer
 
 var score: int = 0
+var distance_traveled: int = 0
 
 func _ready():
-	score = 0
+	loss_music_player =  loss_screen_sceme.find_child("Music")
+	distance_traveled = 0
 
 func _process(delta):
-	score += ceili(score_mult/10)
+	distance_traveled += ceili(score_mult/10)
 
 
 func _physics_process(delta):
@@ -36,3 +41,16 @@ func _physics_process(delta):
 	anim_player.set("parameters/conditions/landed", is_on_floor() && velocity.y==0)
 	
 	move_and_slide()
+
+func lose():
+	UI.hide()
+	get_tree().paused = true
+	if score > GlobalValues.high_score:
+		GlobalValues.high_score = score
+	GlobalValues.distance_traveled = distance_traveled
+	GlobalValues.score = score
+	MusicPlayer.play_song(GlobalValues.gameover_music_path)
+	loss_screen_sceme.update_labels()
+	loss_screen_sceme.show()
+	loss_music_player.play()
+	

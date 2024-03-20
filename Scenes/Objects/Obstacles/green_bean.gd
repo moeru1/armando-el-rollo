@@ -17,6 +17,6 @@ func _process(delta):
 
 func _on_area3d_body_entered(body):
 	if body.is_in_group("player"):
-		GlobalValues.high_score += 100
-		print("Collected green bean")
+		body.score += 100
+		#print("Collected green bean")
 		queue_free()

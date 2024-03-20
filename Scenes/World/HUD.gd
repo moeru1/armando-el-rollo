@@ -1,15 +1,12 @@
 extends CanvasLayer
-@onready var score_label: Label = $"../UI/Socreboard/Score_panel/ScoreLabel"
-@onready var roll_score_label: Label = $Socreboard/Roll_panel/GridContainer/RollScore
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	roll_score_label.set_text("{score}".format({"score": "0000"}))
-
+@export var score_label: Label
+@export var distance_label: Label
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	score_label	.set_text("{score}".format({"score": get_parent().score}))
+	score_label.set_text("{score}".format({"score": get_parent().score}))
+	distance_label	.set_text("{distance} M".format({"distance": get_parent().distance_traveled}))
 
 
 func _on_pause_pressed():

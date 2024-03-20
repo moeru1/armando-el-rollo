@@ -1,10 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu58b124nlfdj"]
 
 [ext_resource type="Script" path="res://LoadingScreens/menu.gd" id="1_simqx"]
+[ext_resource type="Texture2D" uid="uid://cpa61qb7upccd" path="res://Assets/UI/Fondos/main_menu.png" id="2_7jgfj"]
 [ext_resource type="AudioStream" uid="uid://cja20afev65ro" path="res://Assets/Audio/button_press_sfx.wav" id="2_km21d"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65uaf"]
-bg_color = Color(0.0980392, 0.368627, 0.113725, 1)
 
 [sub_resource type="ImageTexture" id="ImageTexture_vm5f6"]
 
@@ -17,11 +15,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_65uaf")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 654.0
+texture = ExtResource("2_7jgfj")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00868056
+anchor_top = 0.0740741
+anchor_right = 0.00868056
+anchor_bottom = 0.0740741
 offset_left = 415.0
 offset_top = 282.0
 offset_right = 677.0

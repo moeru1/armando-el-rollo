@@ -27,7 +27,7 @@ offset_left = 415.0
 offset_top = 282.0
 offset_right = 677.0
 offset_bottom = 345.0
-text = "Continue"
+text = "Continuar"
 icon = SubResource("ImageTexture_vm5f6")
 metadata/_edit_use_anchors_ = true
 

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/World/HUD.gd" id="1_3g2n1"]
 [ext_resource type="Theme" uid="uid://n8d1v8f1no87" path="res://Scenes/UI/theme.tres" id="2_3mbt0"]
 [ext_resource type="Texture2D" uid="uid://bu0bcivki2u50" path="res://Assets/UI/frijol.png" id="3_2hr06"]
-[ext_resource type="Texture2D" uid="uid://cwcudcu5w8usr" path="res://Assets/UI/Botón de puntos.png" id="3_2p0xp"]
-[ext_resource type="Texture2D" uid="uid://o4ydxtbr72lx" path="res://Assets/UI/Botón de pausa.png" id="4_7m1n4"]
+[ext_resource type="Texture2D" uid="uid://dgcxg6jlk3qox" path="res://Assets/UI/Botones sin fondo/puntos.png" id="3_6tdo5"]
+[ext_resource type="Texture2D" uid="uid://uuma8s281h3u" path="res://Assets/UI/Botones sin fondo/pausa.png" id="5_bfjnj"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_3g2n1")
@@ -26,7 +26,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_3mbt0")
 
-[node name="ScoreLabel" type="Label" parent="Socreboard/Score_panel"]
+[node name="DistanceLabel" type="Label" parent="Socreboard/Score_panel"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0000"
@@ -47,10 +47,10 @@ columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Socreboard/Roll_panel/GridContainer"]
 layout_mode = 2
-texture = ExtResource("3_2p0xp")
+texture = ExtResource("3_6tdo5")
 expand_mode = 3
 
-[node name="RollScore" type="Label" parent="Socreboard/Roll_panel/GridContainer"]
+[node name="ScoreLabel" type="Label" parent="Socreboard/Roll_panel/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0000
@@ -88,11 +88,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Pause" type="TextureButton" parent="."]
-offset_left = 34.0
-offset_top = 9.0
-offset_right = 137.0
-offset_bottom = 110.0
-texture_normal = ExtResource("4_7m1n4")
+offset_left = 38.0
+offset_top = 18.0
+offset_right = 141.0
+offset_bottom = 119.0
+texture_normal = ExtResource("5_bfjnj")
 ignore_texture_size = true
 stretch_mode = 0
 

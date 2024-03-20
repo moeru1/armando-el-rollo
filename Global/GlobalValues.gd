@@ -7,8 +7,13 @@ var menu_screen_path: String = "res://LoadingScreens/menu.tscn"
 var menu_music_path: String = "res://Assets/Audio/Soundtrack/Armando_Titlescreen_ost.ogg"
 var gameplay_music_path: String = "res://Assets/Audio/Soundtrack/Armando_Gameplay_ost.ogg"
 var gameover_music_path: String = "res://Assets/Audio/Soundtrack/Armando_Gameover_ost.ogg"
+
 #Game related values
+var top_distance_traveled: int = 0
+var distance_traveled: int = 0
+
 var high_score: int = 0
+var score: int = 0
 
 var speed_modif: float = 1.0
 
