@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://brl2dtpnuyh83"]
+[gd_scene load_steps=5 format=3 uid="uid://cvgyoiocb6ww3"]
 
-[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/green_bean.gd" id="1_84qcs"]
+[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/chancla.gd" id="1_2ahvm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rfucw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjpu3"]
-albedo_color = Color(0, 0.803922, 0.101961, 1)
+albedo_color = Color(1, 0.843137, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4tscm"]
 
-[node name="GreenBean" type="Area3D"]
+[node name="Chancla" type="Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-script = ExtResource("1_84qcs")
+script = ExtResource("1_2ahvm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_rfucw")
