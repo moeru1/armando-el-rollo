@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cvdqp0w13ac48"
-path="res://.godot/imported/frijol verde oficial.glb-17053a2f4468ba3135ecf775a19c0888.scn"
+path="res://.godot/imported/frijol verde oficial.glb-fb1ed91eb7107a28dd5567f3f1f73a9a.scn"
 
 [deps]
 
-source_file="res://Assets/Imports/frijol verde oficial.glb"
-dest_files=["res://.godot/imported/frijol verde oficial.glb-17053a2f4468ba3135ecf775a19c0888.scn"]
+source_file="res://Assets/Imports/Frijol verde/frijol verde oficial.glb"
+dest_files=["res://.godot/imported/frijol verde oficial.glb-fb1ed91eb7107a28dd5567f3f1f73a9a.scn"]
 
 [params]
 

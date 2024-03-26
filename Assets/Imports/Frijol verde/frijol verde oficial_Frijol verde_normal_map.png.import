@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baeew28ee8fym"
-path.s3tc="res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-3577e41b42412396ce6a3d2fb08055df.s3tc.ctex"
-path.etc2="res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-3577e41b42412396ce6a3d2fb08055df.etc2.ctex"
+path.s3tc="res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-271390b085636d03498e420a620378c4.s3tc.ctex"
+path.etc2="res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-271390b085636d03498e420a620378c4.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,8 +13,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Imports/frijol verde oficial_Frijol verde_normal_map.png"
-dest_files=["res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-3577e41b42412396ce6a3d2fb08055df.s3tc.ctex", "res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-3577e41b42412396ce6a3d2fb08055df.etc2.ctex"]
+source_file="res://Assets/Imports/Frijol verde/frijol verde oficial_Frijol verde_normal_map.png"
+dest_files=["res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-271390b085636d03498e420a620378c4.s3tc.ctex", "res://.godot/imported/frijol verde oficial_Frijol verde_normal_map.png-271390b085636d03498e420a620378c4.etc2.ctex"]
 
 [params]
 

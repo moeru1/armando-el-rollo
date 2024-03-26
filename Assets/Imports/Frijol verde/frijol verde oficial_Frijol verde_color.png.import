@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7lma8kp6orom"
-path.s3tc="res://.godot/imported/frijol verde oficial_Frijol verde_color.png-fe174502fe0c69a0bf36a027273bbdf3.s3tc.ctex"
-path.etc2="res://.godot/imported/frijol verde oficial_Frijol verde_color.png-fe174502fe0c69a0bf36a027273bbdf3.etc2.ctex"
+path.s3tc="res://.godot/imported/frijol verde oficial_Frijol verde_color.png-5481bb929070efd9da5b0a743a7bc382.s3tc.ctex"
+path.etc2="res://.godot/imported/frijol verde oficial_Frijol verde_color.png-5481bb929070efd9da5b0a743a7bc382.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,8 +13,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Imports/frijol verde oficial_Frijol verde_color.png"
-dest_files=["res://.godot/imported/frijol verde oficial_Frijol verde_color.png-fe174502fe0c69a0bf36a027273bbdf3.s3tc.ctex", "res://.godot/imported/frijol verde oficial_Frijol verde_color.png-fe174502fe0c69a0bf36a027273bbdf3.etc2.ctex"]
+source_file="res://Assets/Imports/Frijol verde/frijol verde oficial_Frijol verde_color.png"
+dest_files=["res://.godot/imported/frijol verde oficial_Frijol verde_color.png-5481bb929070efd9da5b0a743a7bc382.s3tc.ctex", "res://.godot/imported/frijol verde oficial_Frijol verde_color.png-5481bb929070efd9da5b0a743a7bc382.etc2.ctex"]
 
 [params]
 
