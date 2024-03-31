@@ -7,7 +7,7 @@ extends Node3D
 @export var spawn_offset: int = 5
 @export var spawn_objects: bool = false
 @export var green_probability: int = 70
-@export var chancla_probability: int = 5
+@export var chancla_probability: int = 30
 
 var active: bool = false
 var countdown:int = 0
