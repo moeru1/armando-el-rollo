@@ -15,6 +15,7 @@ var score: int = 0
 var distance_traveled: int = 0
 
 func _ready():
+	print("IM IN GROUP: ", get_groups())
 	loss_music_player =  loss_screen_sceme.find_child("Music")
 	distance_traveled = 0
 
