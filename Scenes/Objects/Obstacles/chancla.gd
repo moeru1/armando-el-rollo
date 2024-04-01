@@ -16,12 +16,7 @@ func _process(delta):
 
 
 func _on_area3d_body_entered(body):
-	print("COLISION CHANCLA CON GRUPOS ", body.get_groups())
+	const immune_sec = 5.0
 	if body.is_in_group("player"):
-		var immune_layer = 6
-		var player_layer = 4
-		body.set_collision_layer_value(immune_layer, true)
-		body.set_collision_layer_value(player_layer, false)
-		#body.score += 100
-		#print("Collected green bean")
+		body.immune(immune_sec)
 		queue_free()
