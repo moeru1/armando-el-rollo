@@ -43,7 +43,12 @@ pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
+3d_physics/layer_1="Enemy"
 3d_physics/layer_2="WorldBorder"
+3d_physics/layer_3="Floor"
+3d_physics/layer_4="Player"
+3d_physics/layer_5="Collectible"
+3d_physics/layer_6="ImmunePlayer"
 
 [rendering]
 

@@ -89,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96073, 0, 0)
 [node name="Left_Wall" type="StaticBody3D" parent="World/World_border"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02707, 0, 0)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/World_border/Left_Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44965, 1.5974, 0)
@@ -104,7 +104,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d3hsm")
 [node name="Right_Wall" type="StaticBody3D" parent="World/World_border"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3653, 0, 0)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 13
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/World_border/Right_Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44965, 1.5974, 0)
@@ -121,6 +121,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.59468, 0, 0)
 
 [node name="Floor" type="StaticBody3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47054, 0, 0)
+collision_layer = 4
+collision_mask = 11
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0605, 0, 0)

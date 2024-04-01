@@ -48,7 +48,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vhq32")
 
 [node name="GreenBean" type="Area3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+collision_layer = 16
+collision_mask = 44
 script = ExtResource("1_84qcs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

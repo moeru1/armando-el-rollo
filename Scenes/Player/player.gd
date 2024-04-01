@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+const immune_layer = 6
+const player_layer = 4
+
 @export var gravity:float = 12.0
 @export var speed: float = 5.0
 @export var jump_velocity: int = 7
@@ -13,6 +16,9 @@ var loss_music_player: AudioStreamPlayer
 
 var score: int = 0
 var distance_traveled: int = 0
+# Variables used for debug purposes
+var is_immune: bool = false
+var immune_remaining: float = 0
 
 func _ready():
 	loss_music_player =  loss_screen_sceme.find_child("Music")
@@ -21,7 +27,9 @@ func _ready():
 
 func _process(delta):
 	distance_traveled += ceili(score_mult/10)
-
+	#debug data
+	if is_immune:
+		display_immune_time(delta)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -54,4 +62,22 @@ func lose():
 	loss_screen_sceme.update_labels()
 	loss_screen_sceme.show()
 	loss_music_player.play()
+
+func immune(time_sec: float):
+	set_collision_layer_value(immune_layer, true)
+	set_collision_layer_value(player_layer, false)
+	MusicPlayer.play_song(GlobalValues.immunity_music_path)
+	is_immune = true
+	immune_remaining = time_sec
+	# What happends if i enter here again?
+	await get_tree().create_timer(time_sec, false).timeout 
+	set_collision_layer_value(immune_layer, false)
+	set_collision_layer_value(player_layer, true)
+	MusicPlayer.play_song(GlobalValues.gameplay_music_path)
+	is_immune = false
+	immune_remaining = 0.0
 	
+func display_immune_time(delta):
+	print("Immune remaining time: ", immune_remaining)
+	immune_remaining -= delta
+
