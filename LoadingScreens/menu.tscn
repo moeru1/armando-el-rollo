@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu58b124nlfdj"]
+[gd_scene load_steps=10 format=3 uid="uid://cu58b124nlfdj"]
 
 [ext_resource type="Script" path="res://LoadingScreens/menu.gd" id="1_simqx"]
 [ext_resource type="Texture2D" uid="uid://cpa61qb7upccd" path="res://Assets/UI/Fondos/main_menu.png" id="2_7jgfj"]
 [ext_resource type="AudioStream" uid="uid://cja20afev65ro" path="res://Assets/Audio/button_press_sfx.wav" id="2_km21d"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_vm5f6"]
+[ext_resource type="Texture2D" uid="uid://cl5iouu353kfx" path="res://Assets/UI/Botones sin fondo/jugar.png" id="4_w2mws"]
+[ext_resource type="Texture2D" uid="uid://dgxaguoycrifx" path="res://Assets/UI/Botones sin fondo/misiones.png" id="5_xs535"]
+[ext_resource type="Texture2D" uid="uid://btygsdx6pylok" path="res://Assets/UI/Botones sin fondo/perfil.png" id="6_v6eqa"]
+[ext_resource type="Texture2D" uid="uid://dowma11a0vl0j" path="res://Assets/UI/Botones sin fondo/tienda.png" id="7_lf0ln"]
+[ext_resource type="Texture2D" uid="uid://ckgu2btm4p4wm" path="res://Assets/UI/Botones sin fondo/ajustes.png" id="8_qjq0e"]
+[ext_resource type="Texture2D" uid="uid://cvwsg26wpp2xo" path="res://Assets/UI/Botones sin fondo/salir.png" id="9_kygyx"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_simqx")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_km21d")
+volume_db = 4.0
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -24,23 +32,69 @@ offset_bottom = 654.0
 texture = ExtResource("2_7jgfj")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.00868056
-anchor_top = 0.0740741
-anchor_right = 0.00868056
-anchor_bottom = 0.0740741
-offset_left = 415.0
-offset_top = 282.0
-offset_right = 677.0
-offset_bottom = 345.0
-text = "Press to start"
-icon = SubResource("ImageTexture_vm5f6")
-metadata/_edit_use_anchors_ = true
+[node name="PlayButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 112.0
+offset_right = 757.0
+offset_bottom = 459.0
+texture_normal = ExtResource("4_w2mws")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="ButtonSound" type="AudioStreamPlayer" parent="Panel/Button"]
-stream = ExtResource("2_km21d")
-volume_db = 4.0
+[node name="QuestsButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -28.0
+offset_right = 286.0
+offset_bottom = 243.0
+texture_normal = ExtResource("5_xs535")
+ignore_texture_size = true
+stretch_mode = 0
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[node name="StoreButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 398.0
+offset_right = 286.0
+offset_bottom = 669.0
+texture_normal = ExtResource("6_v6eqa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ProfileButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 184.0
+offset_right = 286.0
+offset_bottom = 455.0
+texture_normal = ExtResource("7_lf0ln")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SettingsButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 19.0
+offset_right = 1118.0
+offset_bottom = 135.0
+texture_normal = ExtResource("8_qjq0e")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 464.0
+offset_right = 1109.0
+offset_bottom = 609.0
+texture_normal = ExtResource("9_kygyx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/QuestsButton" to="." method="_on_quests_button_pressed"]
+[connection signal="pressed" from="Panel/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="Panel/ProfileButton" to="." method="_on_profile_button_pressed"]
+[connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -23,6 +23,7 @@ var immune_remaining: float = 0
 func _ready():
 	loss_music_player =  loss_screen_sceme.find_child("Music")
 	distance_traveled = 0
+	set_collision_mask_value(3, true)
 
 func _process(delta):
 	distance_traveled += ceili(score_mult/10)
