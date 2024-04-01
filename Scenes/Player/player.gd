@@ -23,7 +23,6 @@ var immune_remaining: float = 0
 func _ready():
 	loss_music_player =  loss_screen_sceme.find_child("Music")
 	distance_traveled = 0
-	set_collision_mask_value(3, true)
 
 func _process(delta):
 	distance_traveled += ceili(score_mult/10)
@@ -66,14 +65,11 @@ func lose():
 func immune(time_sec: float):
 	set_collision_layer_value(immune_layer, true)
 	set_collision_layer_value(player_layer, false)
-	MusicPlayer.play_song(GlobalValues.immunity_music_path)
 	is_immune = true
 	immune_remaining = time_sec
-	# What happends if i enter here again?
-	await get_tree().create_timer(time_sec, false).timeout 
+	await get_tree().create_timer(time_sec, false).timeout
 	set_collision_layer_value(immune_layer, false)
 	set_collision_layer_value(player_layer, true)
-	MusicPlayer.play_song(GlobalValues.gameplay_music_path)
 	is_immune = false
 	immune_remaining = 0.0
 	
