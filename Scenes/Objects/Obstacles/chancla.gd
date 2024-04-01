@@ -19,4 +19,5 @@ func _on_area3d_body_entered(body):
 	const immune_sec = 5.0
 	if body.is_in_group("player"):
 		body.immune(immune_sec)
+		print("IMMUNE ENDED")
 		queue_free()
