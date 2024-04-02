@@ -65,11 +65,14 @@ func lose():
 func immune(time_sec: float):
 	set_collision_layer_value(immune_layer, true)
 	set_collision_layer_value(player_layer, false)
+	MusicPlayer.play_song(GlobalValues.immunity_music_path)
 	is_immune = true
 	immune_remaining = time_sec
+
 	await get_tree().create_timer(time_sec, false).timeout
 	set_collision_layer_value(immune_layer, false)
 	set_collision_layer_value(player_layer, true)
+	MusicPlayer.play_song(GlobalValues.gameplay_music_path)
 	is_immune = false
 	immune_remaining = 0.0
 	

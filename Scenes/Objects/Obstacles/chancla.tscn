@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvgyoiocb6ww3"]
+[gd_scene load_steps=5 format=3 uid="uid://b4cf8kbwu418i"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/Obstacles/chancla.gd" id="1_2ahvm"]
 
@@ -12,7 +12,7 @@ albedo_color = Color(1, 0.843137, 0, 1)
 [node name="Chancla" type="Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 collision_layer = 16
-collision_mask = 44
+collision_mask = 40
 script = ExtResource("1_2ahvm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

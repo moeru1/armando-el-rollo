@@ -144,6 +144,8 @@ size = 10.2792
 
 [node name="Player" parent="." instance=ExtResource("6_weiv8")]
 transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 3.30214, 0.719742, 0)
+collision_layer = 8
+collision_mask = 22
 
 [connection signal="timeout" from="Generators/ObstacleGenerator/SpawnCooldown" to="Generators/ObstacleGenerator" method="_on_spawn_cooldown_timeout"]
 [connection signal="timeout" from="Generators/FallingGenerator/SpawnCooldown" to="Generators/FallingGenerator" method="_on_spawn_cooldown_timeout"]
