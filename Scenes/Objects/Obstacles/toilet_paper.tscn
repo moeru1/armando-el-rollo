@@ -8,11 +8,12 @@
 height = 10.1044
 radius = 7.44487
 
-[node name="Toilet Paper" type="Area3D"]
+[node name="Toilet Paper" type="Area3D" node_paths=PackedStringArray("sprite")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.332024, 0)
 collision_layer = 16
 collision_mask = 44
 script = ExtResource("1_aufkt")
+sprite = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)

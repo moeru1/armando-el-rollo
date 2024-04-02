@@ -8,7 +8,7 @@ const player_layer = 4
 
 @export var gravity:float = 12.0
 @export var speed: float = 5.0
-@export var jump_velocity: int = 7
+@export var jump_velocity: float = 10
 
 @export var score_mult: float = 3.0
 
@@ -36,7 +36,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y -= gravity*2 * delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity

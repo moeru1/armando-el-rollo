@@ -1,11 +1,12 @@
 extends Area3D
-
+@export var sprite: Sprite3D
 @export var speed: float = 6
 @export var del_distance: int = 15
 @onready var sound_player: AudioStreamPlayer = $AudioStreamPlayer
 var new_speed: float
 
 func _process(delta):
+	sprite.position.y += sin(delta)*0.15
 	new_speed = speed*GlobalValues.speed_modif
 	new_speed = clamp(new_speed, 1, 13)
 	position.x -= new_speed*delta

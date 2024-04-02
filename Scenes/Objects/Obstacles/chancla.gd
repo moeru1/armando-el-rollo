@@ -2,9 +2,8 @@ extends Area3D
 
 @export var base_speed: float = 2
 @export var del_distance: int = -1
-
-@onready var soundtrack_player: AudioStreamPlayer = $Soundtrack
-@onready var sound_player: AudioStreamPlayer = $SoundEffect
+@export var mesh: MeshInstance3D
+@export var rotation_speed: float = 1.0
 
 var speed: float
 
@@ -13,6 +12,7 @@ func _ready():
 	speed = clamp(speed, 1, 13)
 
 func _process(delta):
+	mesh.rotate_y(rotation_speed*delta)
 	position.y -= speed * delta
 	position.x -= speed * delta
 	if position.y < del_distance:
