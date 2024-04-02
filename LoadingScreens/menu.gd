@@ -1,10 +1,14 @@
 extends CanvasLayer
 @onready var button_sound = $ButtonSound
+@onready var soundtrack_player: AudioStreamPlayer = $Soundtrack
+
+func _ready():
+	soundtrack_player.play()
 
 func _on_play_button_pressed():
 	button_sound.play()
+	soundtrack_player.stop()
 	LoadManager.load_scene("res://Scenes/World/level.tscn")
-	MusicPlayer.play_song(GlobalValues.gameplay_music_path)
 
 
 func _on_quests_button_pressed():

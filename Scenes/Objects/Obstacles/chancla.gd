@@ -2,6 +2,10 @@ extends Area3D
 
 @export var base_speed: float = 2
 @export var del_distance: int = -1
+
+@onready var soundtrack_player: AudioStreamPlayer = $Soundtrack
+@onready var sound_player: AudioStreamPlayer = $SoundEffect
+
 var speed: float
 
 func _ready():

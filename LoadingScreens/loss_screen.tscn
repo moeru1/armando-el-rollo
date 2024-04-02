@@ -102,7 +102,7 @@ theme = ExtResource("2_bj6l0")
 text = "0000 m"
 horizontal_alignment = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamOggVorbis_iwums")
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu58b124nlfdj"]
+[gd_scene load_steps=11 format=3 uid="uid://cu58b124nlfdj"]
 
 [ext_resource type="Script" path="res://LoadingScreens/menu.gd" id="1_simqx"]
 [ext_resource type="Texture2D" uid="uid://cpa61qb7upccd" path="res://Assets/UI/Fondos/main_menu.png" id="2_7jgfj"]
@@ -9,9 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://dowma11a0vl0j" path="res://Assets/UI/Botones sin fondo/tienda.png" id="7_lf0ln"]
 [ext_resource type="Texture2D" uid="uid://ckgu2btm4p4wm" path="res://Assets/UI/Botones sin fondo/ajustes.png" id="8_qjq0e"]
 [ext_resource type="Texture2D" uid="uid://cvwsg26wpp2xo" path="res://Assets/UI/Botones sin fondo/salir.png" id="9_kygyx"]
+[ext_resource type="AudioStream" uid="uid://g2i1c50yw2pg" path="res://Assets/Audio/Soundtrack/Armando_Titlescreen_ost.ogg" id="10_md3nl"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_simqx")
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_md3nl")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_km21d")
