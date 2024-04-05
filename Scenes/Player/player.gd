@@ -11,10 +11,11 @@ const player_layer = 4
 @export var jump_velocity: float = 10
 
 @export var score_mult: float = 3.0
-
+@onready var armando_mesh: MeshInstance3D = $Scene/Armature/Skeleton3D/Armando_low_poly_todo_junto
 @onready var anim_player: AnimationTree = $AnimationTree
 @onready var loss_screen_sceme: CanvasLayer = $loss_screen
 @onready var UI: CanvasLayer = $UI
+@onready var shader_material: ShaderMaterial = armando_mesh.get_active_material(0)
 var loss_music_player: AudioStreamPlayer
 
 var score: int = 0
@@ -32,7 +33,8 @@ func _process(delta):
 	distance_traveled += ceili(score_mult/10)
 	#debug data
 	if is_immune:
-		display_immune_time(delta)
+		#display_immune_time(delta)
+		pass
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -67,6 +69,7 @@ func lose():
 	loss_music_player.play()
 
 func immune(time_sec: float):
+	shader_material.set_shader_parameter("enabled", true)
 	soundtrack_player.set_stream_paused(true)
 	sound_manager.chancla()
 	set_collision_layer_value(immune_layer, true)
@@ -81,6 +84,7 @@ func immune(time_sec: float):
 	immune_remaining = 0.0
 	
 	soundtrack_player.set_stream_paused(false)
+	shader_material.set_shader_parameter("enabled", false)
 	
 func display_immune_time(delta):
 	print("Immune remaining time: ", immune_remaining)
