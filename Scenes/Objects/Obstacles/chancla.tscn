@@ -44,7 +44,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a0h2d")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iqp2j"]
-radius = 0.86301
+radius = 0.944999
+height = 2.74898
 
 [node name="Chancla" type="Area3D" node_paths=PackedStringArray("mesh")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -54,7 +55,7 @@ script = ExtResource("1_2ahvm")
 mesh = NodePath("Cube")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.99009, -0.208738, -0.125419, -0.234716, 2.88206, 0.799142, 0.0648847, 0.806319, -2.88888, 0, 0, -0.200251)
+transform = Transform3D(-3.9868, -0.278319, -0.167226, -0.312956, 3.84275, 1.06553, 0.0865131, 1.07509, -3.85184, 0, 0, -0.200251)
 mesh = SubResource("ArrayMesh_ret26")
 skeleton = NodePath("")
 
