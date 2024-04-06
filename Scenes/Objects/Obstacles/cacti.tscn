@@ -6,7 +6,10 @@
 size = Vector3(4.0625, 1.74814, 0.749863)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ofk6"]
-albedo_color = Color(0, 0.964706, 0, 1)
+albedo_color = Color(0.215686, 0.529412, 0, 1)
+rim_tint = 0.27
+ao_light_affect = 1.0
+ao_texture_channel = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns66q"]
 resource_name = "TRONCO ARBOL.003"
