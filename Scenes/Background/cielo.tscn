@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg7ay1l4vduuv"]
+
+[ext_resource type="Texture2D" uid="uid://dforxit28nsbe" path="res://Assets/Background/Fondo por capas/1 Cielo.png" id="1_f66ac"]
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="2_ncxn3"]
+
+[node name="Cielo" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
+centered = false
+texture = ExtResource("1_f66ac")
+script = ExtResource("2_ncxn3")

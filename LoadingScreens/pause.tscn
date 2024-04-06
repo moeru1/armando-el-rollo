@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwgxygjt61ga5"]
+[gd_scene load_steps=7 format=3 uid="uid://dwgxygjt61ga5"]
 
 [ext_resource type="Script" path="res://LoadingScreens/pause.gd" id="1_xh5b7"]
 [ext_resource type="AudioStream" uid="uid://cja20afev65ro" path="res://Assets/Audio/button_press_sfx.wav" id="2_bq8s6"]
+[ext_resource type="Texture2D" uid="uid://ckgu2btm4p4wm" path="res://Assets/UI/Botones sin fondo/ajustes.png" id="3_gf5gt"]
+[ext_resource type="PackedScene" uid="uid://bgx6bnxgheyai" path="res://LoadingScreens/settings.tscn" id="4_x6yj3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65uaf"]
 bg_color = Color(0, 0, 0, 0.227451)
@@ -11,6 +13,11 @@ bg_color = Color(0, 0, 0, 0.227451)
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 2
 script = ExtResource("1_xh5b7")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bq8s6")
+volume_db = 4.0
+bus = &"Sfx"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -31,8 +38,17 @@ text = "Continuar"
 icon = SubResource("ImageTexture_vm5f6")
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonSound" type="AudioStreamPlayer" parent="Panel/Button"]
-stream = ExtResource("2_bq8s6")
-volume_db = 4.0
+[node name="SettingsButton" type="TextureButton" parent="Panel"]
+offset_left = 1021.0
+offset_top = 21.0
+offset_right = 1082.0
+offset_bottom = 88.0
+texture_normal = ExtResource("3_gf5gt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Settings" parent="." instance=ExtResource("4_x6yj3")]
+visible = false
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -1,7 +1,7 @@
 extends CanvasLayer
 @onready var button_sound = $ButtonSound
 @onready var soundtrack_player: AudioStreamPlayer = $Soundtrack
-
+@onready var settings_panel: Panel = $Settings
 func _ready():
 	soundtrack_player.play()
 
@@ -25,6 +25,7 @@ func _on_profile_button_pressed():
 
 func _on_settings_button_pressed():
 	button_sound.play()
+	settings_panel.show()
 
 
 func _on_exit_button_pressed():

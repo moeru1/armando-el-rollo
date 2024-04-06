@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqj8udpsqi556"]
+
+[ext_resource type="Texture2D" uid="uid://ckcy5h60pg2eu" path="res://Assets/Background/Fondo por capas/3 nubes.png" id="1_36l3a"]
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="2_lga7k"]
+
+[node name="Nubes" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+centered = false
+texture = ExtResource("1_36l3a")
+script = ExtResource("2_lga7k")
+speed = 8.0
+id = 4

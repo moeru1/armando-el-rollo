@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu58b124nlfdj"]
+[gd_scene load_steps=12 format=3 uid="uid://cu58b124nlfdj"]
 
 [ext_resource type="Script" path="res://LoadingScreens/menu.gd" id="1_simqx"]
 [ext_resource type="Texture2D" uid="uid://cpa61qb7upccd" path="res://Assets/UI/Fondos/main_menu.png" id="2_7jgfj"]
@@ -10,16 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://ckgu2btm4p4wm" path="res://Assets/UI/Botones sin fondo/ajustes.png" id="8_qjq0e"]
 [ext_resource type="Texture2D" uid="uid://cvwsg26wpp2xo" path="res://Assets/UI/Botones sin fondo/salir.png" id="9_kygyx"]
 [ext_resource type="AudioStream" uid="uid://g2i1c50yw2pg" path="res://Assets/Audio/Soundtrack/Armando_Titlescreen_ost.ogg" id="10_md3nl"]
+[ext_resource type="PackedScene" uid="uid://bgx6bnxgheyai" path="res://LoadingScreens/settings.tscn" id="11_trlc5"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_simqx")
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_md3nl")
+bus = &"Music"
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_km21d")
 volume_db = 4.0
+bus = &"Sfx"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -95,6 +98,9 @@ offset_bottom = 609.0
 texture_normal = ExtResource("9_kygyx")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Settings" parent="." instance=ExtResource("11_trlc5")]
+visible = false
 
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/QuestsButton" to="." method="_on_quests_button_pressed"]

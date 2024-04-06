@@ -1,0 +1,29 @@
+[gd_scene load_steps=9 format=3 uid="uid://d24d3b0m0ys8b"]
+
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="1_oagqi"]
+[ext_resource type="PackedScene" uid="uid://dg7ay1l4vduuv" path="res://Scenes/Background/cielo.tscn" id="2_w7hiy"]
+[ext_resource type="PackedScene" uid="uid://bxvqk2dcahnnh" path="res://Scenes/Background/niebla_1.tscn" id="3_j25id"]
+[ext_resource type="PackedScene" uid="uid://bqj8udpsqi556" path="res://Scenes/Background/nubes.tscn" id="4_ow3mw"]
+[ext_resource type="PackedScene" uid="uid://blgvneie1othk" path="res://Scenes/Background/edificios.tscn" id="5_74i4k"]
+[ext_resource type="PackedScene" uid="uid://ciwpdv0dsvg2f" path="res://Scenes/Background/niebla_2.tscn" id="6_0h46g"]
+[ext_resource type="PackedScene" uid="uid://v0oek4j75dj1" path="res://Scenes/Background/plantas.tscn" id="7_ak0xy"]
+[ext_resource type="PackedScene" uid="uid://bjfxucxudykia" path="res://Scenes/Background/plataforma.tscn" id="8_o4vw2"]
+
+[node name="Background" type="Node3D"]
+script = ExtResource("1_oagqi")
+
+[node name="Cielo" parent="." instance=ExtResource("2_w7hiy")]
+
+[node name="Niebla1" parent="." instance=ExtResource("3_j25id")]
+
+[node name="Nubes" parent="." instance=ExtResource("4_ow3mw")]
+
+[node name="Edificios" parent="." instance=ExtResource("5_74i4k")]
+speed = 7.0
+
+[node name="Niebla2" parent="." instance=ExtResource("6_0h46g")]
+
+[node name="Plantas" parent="." instance=ExtResource("7_ak0xy")]
+speed = 7.0
+
+[node name="Plataforma" parent="." instance=ExtResource("8_o4vw2")]

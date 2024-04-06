@@ -48,6 +48,7 @@ icon = SubResource("ImageTexture_vm5f6")
 [node name="ButtonSound" type="AudioStreamPlayer" parent="Panel/Button"]
 stream = ExtResource("2_qhe40")
 volume_db = 4.0
+bus = &"Sfx"
 
 [node name="Roll_panel" type="PanelContainer" parent="."]
 offset_left = 511.0
@@ -104,5 +105,6 @@ horizontal_alignment = 1
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamOggVorbis_iwums")
+bus = &"Music"
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

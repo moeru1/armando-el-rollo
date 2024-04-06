@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxvqk2dcahnnh"]
+
+[ext_resource type="Texture2D" uid="uid://b1kkmorty4xsn" path="res://Assets/Background/Fondo por capas/2 niebla atmosférica.png" id="1_xxgc1"]
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="2_3yyq3"]
+
+[node name="Niebla1" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+centered = false
+texture = ExtResource("1_xxgc1")
+script = ExtResource("2_3yyq3")
+id = 2

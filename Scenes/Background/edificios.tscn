@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://blgvneie1othk"]
+
+[ext_resource type="Texture2D" uid="uid://cc81viqf62yol" path="res://Assets/Background/Fondo por capas/4 edificios corregido.png" id="1_k3xse"]
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="2_0e85r"]
+
+[node name="Edificios" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+centered = false
+texture = ExtResource("1_k3xse")
+script = ExtResource("2_0e85r")
+speed = 8.0
+id = 1

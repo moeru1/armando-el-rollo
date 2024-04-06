@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciwpdv0dsvg2f"]
+
+[ext_resource type="Texture2D" uid="uid://bu1drkbucfmp0" path="res://Assets/Background/Fondo por capas/5 segunda niebla atmosférica menos opacidad.png" id="1_bapol"]
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="2_7pv2r"]
+
+[node name="Niebla2" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+centered = false
+modulate = Color(1, 1, 1, 0.32549)
+texture = ExtResource("1_bapol")
+script = ExtResource("2_7pv2r")
+speed = 6.0
+id = 3

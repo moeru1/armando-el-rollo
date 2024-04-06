@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://v0oek4j75dj1"]
+
+[ext_resource type="Texture2D" uid="uid://qcjtrq7tef2g" path="res://Assets/Background/Fondo por capas/6 plantitas.png" id="1_nskif"]
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="2_riklf"]
+
+[node name="Plantas" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+centered = false
+texture = ExtResource("1_nskif")
+script = ExtResource("2_riklf")
+speed = 8.0
+id = 5

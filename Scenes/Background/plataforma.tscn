@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjfxucxudykia"]
+
+[ext_resource type="Texture2D" uid="uid://gmpwehjac2wf" path="res://Assets/Background/Fondo por capas/7 plataforma.png" id="1_cbfhm"]
+[ext_resource type="Script" path="res://Scenes/Background/background.gd" id="2_x10rp"]
+
+[node name="Plataforma" type="Sprite3D"]
+centered = false
+texture = ExtResource("1_cbfhm")
+script = ExtResource("2_x10rp")
+id = 6

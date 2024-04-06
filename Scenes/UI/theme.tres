@@ -16,3 +16,4 @@ corner_radius_bottom_left = 15
 default_font = ExtResource("1_40nh0")
 Panel/styles/panel = SubResource("StyleBoxFlat_gphgt")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_74aa5")
+VBoxContainer/constants/separation = 4
