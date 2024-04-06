@@ -22,7 +22,7 @@ func spawn_tiles():
 	if (rand_int <= cacti_probability):
 		obstacle = random_location.random_cacti
 	elif (cacti_probability < rand_int && rand_int <= cacti_probability + paper_probability):
-		print("SELECTED PAPER!!!")
+		#print("SELECTED PAPER!!!")
 		obstacle = random_location.random_paper
 		
 	if obstacle != null:

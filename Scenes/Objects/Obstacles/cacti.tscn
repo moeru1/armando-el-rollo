@@ -6,7 +6,7 @@
 size = Vector3(4.0625, 1.74814, 0.749863)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ofk6"]
-albedo_color = Color(0, 0.509804, 0, 1)
+albedo_color = Color(0, 0.964706, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns66q"]
 resource_name = "TRONCO ARBOL.003"
@@ -48,7 +48,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_uq7cq")
 
 [node name="Cacti" type="StaticBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
 collision_layer = 9
 collision_mask = 8
 script = ExtResource("1_fb7sp")

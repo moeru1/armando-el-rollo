@@ -23,7 +23,7 @@ func spawn_tiles():
 	if (rand_int <= green_probability):
 		obstacle = random_location.random_green
 	elif (green_probability < rand_int && rand_int <= green_probability + chancla_probability):
-		print("CHANCLA SELECTED!!!")
+		#print("CHANCLA SELECTED!!!")
 		obstacle = random_location.random_chancla
 	if obstacle != null:
 		var obs_instance = obstacle.call()

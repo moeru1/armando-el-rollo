@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var button_sound = $Panel/Button/ButtonSound
-@onready var roll_score_label = $Roll_panel/GridContainer/RollScore
-@onready var distance_traveled_label = $Distance
+@export var roll_score_label: Label
+@export var distance_traveled_label: Label
 @onready var soundtrack_player = $Soundtrack
 
 func update_labels():

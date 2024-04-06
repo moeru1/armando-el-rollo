@@ -152,6 +152,7 @@ theme_override_fonts/font = ExtResource("14_e2lyg")
 text = "Opción no disponible"
 
 [node name="PanelContainer" type="PanelContainer" parent="NotAvailable/Panel"]
+layout_mode = 0
 offset_left = 30.5
 offset_top = 24.0
 offset_right = 59.5

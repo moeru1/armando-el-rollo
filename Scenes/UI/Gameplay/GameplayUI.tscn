@@ -8,10 +8,10 @@
 
 [node name="UI" type="CanvasLayer" node_paths=PackedStringArray("score_label", "distance_label")]
 script = ExtResource("1_3g2n1")
-score_label = NodePath("Socreboard/Roll_panel/GridContainer/ScoreLabel")
-distance_label = NodePath("Socreboard/Score_panel/DistanceLabel")
+score_label = NodePath("High_Socreboard/Roll_panel/GridContainer/ScoreLabel")
+distance_label = NodePath("Current_Socreboard/Score_panel/DistanceLabel")
 
-[node name="Socreboard" type="GridContainer" parent="."]
+[node name="High_Socreboard" type="GridContainer" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -22,37 +22,37 @@ offset_bottom = 117.0
 grow_horizontal = 0
 theme_override_constants/v_separation = 13
 
-[node name="Score_panel" type="PanelContainer" parent="Socreboard"]
+[node name="Score_panel" type="PanelContainer" parent="High_Socreboard"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_3mbt0")
 
-[node name="DistanceLabel" type="Label" parent="Socreboard/Score_panel"]
+[node name="HighDistanceLabel" type="Label" parent="High_Socreboard/Score_panel"]
 layout_mode = 2
 size_flags_vertical = 1
-text = "0000"
+text = "0000 M"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Roll_panel" type="PanelContainer" parent="Socreboard"]
+[node name="Roll_panel" type="PanelContainer" parent="High_Socreboard"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_3mbt0")
 
-[node name="GridContainer" type="GridContainer" parent="Socreboard/Roll_panel"]
+[node name="GridContainer" type="GridContainer" parent="High_Socreboard/Roll_panel"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="Socreboard/Roll_panel/GridContainer"]
+[node name="TextureRect" type="TextureRect" parent="High_Socreboard/Roll_panel/GridContainer"]
 layout_mode = 2
 texture = ExtResource("3_6tdo5")
 expand_mode = 3
 
-[node name="ScoreLabel" type="Label" parent="Socreboard/Roll_panel/GridContainer"]
+[node name="ScoreLabel" type="Label" parent="High_Socreboard/Roll_panel/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0000
@@ -97,5 +97,29 @@ offset_bottom = 119.0
 texture_normal = ExtResource("5_bfjnj")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Current_Socreboard" type="GridContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -335.0
+offset_top = 29.0
+offset_right = -198.0
+offset_bottom = 117.0
+grow_horizontal = 0
+theme_override_constants/v_separation = 13
+
+[node name="Score_panel" type="PanelContainer" parent="Current_Socreboard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_3mbt0")
+
+[node name="DistanceLabel" type="Label" parent="Current_Socreboard/Score_panel"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0000 M"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

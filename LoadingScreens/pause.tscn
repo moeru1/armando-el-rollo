@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwgxygjt61ga5"]
+[gd_scene load_steps=9 format=3 uid="uid://dwgxygjt61ga5"]
 
 [ext_resource type="Script" path="res://LoadingScreens/pause.gd" id="1_xh5b7"]
 [ext_resource type="AudioStream" uid="uid://cja20afev65ro" path="res://Assets/Audio/button_press_sfx.wav" id="2_bq8s6"]
 [ext_resource type="Texture2D" uid="uid://ckgu2btm4p4wm" path="res://Assets/UI/Botones sin fondo/ajustes.png" id="3_gf5gt"]
+[ext_resource type="Theme" uid="uid://cyr0nct4sdpwf" path="res://Scenes/UI/theme_pause.tres" id="4_w88k0"]
 [ext_resource type="PackedScene" uid="uid://bgx6bnxgheyai" path="res://LoadingScreens/settings.tscn" id="4_x6yj3"]
+[ext_resource type="FontFile" uid="uid://cuau5ds5vegt0" path="res://Assets/UI/Bungee-Regular.ttf" id="5_5gtir"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65uaf"]
 bg_color = Color(0, 0, 0, 0.227451)
@@ -28,25 +30,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_65uaf")
 metadata/_edit_use_anchors_ = true
 
-[node name="ContinueButton" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 415.0
-offset_top = 282.0
-offset_right = 677.0
-offset_bottom = 345.0
-text = "Continuar"
-icon = SubResource("ImageTexture_vm5f6")
-metadata/_edit_use_anchors_ = true
-
-[node name="MenuButton" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 415.0
-offset_top = 385.0
-offset_right = 677.0
-offset_bottom = 448.0
-text = "Voler al menú"
-icon = SubResource("ImageTexture_vm5f6")
-
 [node name="SettingsButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
 offset_left = 1021.0
@@ -57,9 +40,54 @@ texture_normal = ExtResource("3_gf5gt")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -76.0
+offset_right = 122.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_w88k0")
+
+[node name="ContinueButton" type="Button" parent="Panel/PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5gtir")
+text = "Continuar"
+icon = SubResource("ImageTexture_vm5f6")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = 33.0
+offset_right = 123.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_w88k0")
+
+[node name="MenuButton" type="Button" parent="Panel/PanelContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5gtir")
+text = "Voler al menú"
+icon = SubResource("ImageTexture_vm5f6")
+flat = true
+
 [node name="Settings" parent="." instance=ExtResource("4_x6yj3")]
 visible = false
 
-[connection signal="pressed" from="Panel/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Panel/PanelContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Panel/PanelContainer2/MenuButton" to="." method="_on_menu_button_pressed"]
