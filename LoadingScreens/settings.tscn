@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cuau5ds5vegt0" path="res://Assets/UI/Bungee-Regular.ttf" id="2_p7sx6"]
 [ext_resource type="Script" path="res://LoadingScreens/volume_slider.gd" id="5_ej6q0"]
 
-[node name="Settings" type="Panel"]
+[node name="Settings" type="Panel" node_paths=PackedStringArray("button_sound")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,6 +17,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_7a7o5")
+button_sound = NodePath("ButtonSound")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_a8fms")
