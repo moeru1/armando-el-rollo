@@ -23,6 +23,7 @@ var distance_traveled: int = 0
 # Variables used for debug purposes
 var is_immune: bool = false
 var immune_remaining: float = 0
+var immune_stack: int = 0
 
 func _ready():
 	loss_music_player =  loss_screen_sceme.find_child("Soundtrack")
@@ -32,7 +33,7 @@ func _ready():
 func _process(delta):
 	distance_traveled += ceili(score_mult/10)
 	#debug data
-	if is_immune:
+	if immune_stack > 0:
 		#display_immune_time(delta)
 		pass
 
@@ -74,20 +75,30 @@ func immune(time_sec: float):
 	sound_manager.chancla()
 	set_collision_layer_value(immune_layer, true)
 	set_collision_layer_value(player_layer, false)
-	is_immune = true
-	immune_remaining = time_sec
-
-	await get_tree().create_timer(time_sec, false).timeout
-	set_collision_layer_value(immune_layer, false)
-	set_collision_layer_value(player_layer, true)
-	is_immune = false
-	immune_remaining = 0.0
 	
-	soundtrack_player.set_stream_paused(false)
-	shader_material.set_shader_parameter("enabled", false)
+	var timer = _create_timer(time_sec)
+	immune_stack += 1
+	timer.timeout.connect(func(): 
+		immune_stack -= 1
+		if immune_stack <= 0:
+			set_collision_layer_value(immune_layer, false)
+			set_collision_layer_value(player_layer, true)
+			soundtrack_player.set_stream_paused(false)
+			shader_material.set_shader_parameter("enabled", false)
+	)
+	add_child(timer)
+	
 	
 func display_immune_time(delta):
 	print("Immune remaining time: ", immune_remaining)
 	immune_remaining -= delta
 
 
+func _create_timer(time_sec: float):
+	var timer = Timer.new()
+	timer.autostart = true
+	timer.one_shot = true 
+	timer.wait_time = 5.0
+	timer.start()
+
+	return timer
