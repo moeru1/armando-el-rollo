@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dgcxg6jlk3qox" path="res://Assets/UI/Botones sin fondo/puntos.png" id="4_alvq1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hoski"]
-bg_color = Color(0.172549, 0.172549, 0.172549, 0.27451)
+bg_color = Color(0.172549, 0.172549, 0.172549, 0.4)
 
 [sub_resource type="ImageTexture" id="ImageTexture_vm5f6"]
 

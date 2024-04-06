@@ -59,7 +59,7 @@ theme = ExtResource("1_awelt")
 [node name="master_label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_awelt")
-text = "Sound"
+text = "Master volume"
 horizontal_alignment = 1
 
 [node name="master_slider" type="HSlider" parent="Panel/VBoxContainer"]

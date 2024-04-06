@@ -28,7 +28,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_65uaf")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="ContinueButton" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 415.0
 offset_top = 282.0
@@ -38,7 +38,17 @@ text = "Continuar"
 icon = SubResource("ImageTexture_vm5f6")
 metadata/_edit_use_anchors_ = true
 
+[node name="MenuButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 385.0
+offset_right = 677.0
+offset_bottom = 448.0
+text = "Voler al menú"
+icon = SubResource("ImageTexture_vm5f6")
+
 [node name="SettingsButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
 offset_left = 1021.0
 offset_top = 21.0
 offset_right = 1082.0
@@ -50,5 +60,6 @@ stretch_mode = 5
 [node name="Settings" parent="." instance=ExtResource("4_x6yj3")]
 visible = false
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_settings_button_pressed"]
