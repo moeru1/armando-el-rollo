@@ -61,10 +61,11 @@ func lose():
 	soundtrack_player.stop()
 	UI.hide()
 	get_tree().paused = true
-	if score > GlobalValues.high_score:
-		GlobalValues.high_score = score
+	if distance_traveled > GlobalValues.top_distance_traveled:
+		GlobalValues.top_distance_traveled = distance_traveled
 	GlobalValues.distance_traveled = distance_traveled
 	GlobalValues.score = score
+	SaveHandler.save_data()
 	loss_screen_sceme.update_labels()
 	loss_screen_sceme.show()
 	loss_music_player.play()
@@ -98,7 +99,6 @@ func _create_timer(time_sec: float):
 	var timer = Timer.new()
 	timer.autostart = true
 	timer.one_shot = true 
-	timer.wait_time = 5.0
-	timer.start()
+	timer.wait_time = time_sec
 
 	return timer

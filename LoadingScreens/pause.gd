@@ -12,8 +12,6 @@ func _on_settings_button_pressed():
 	$Settings.show()
 
 
-
-
 func _on_menu_button_pressed():
 	get_tree().paused = false
 	button_sound.play()

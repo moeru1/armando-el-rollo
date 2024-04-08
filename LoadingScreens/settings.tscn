@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cuau5ds5vegt0" path="res://Assets/UI/Bungee-Regular.ttf" id="2_p7sx6"]
 [ext_resource type="Script" path="res://LoadingScreens/volume_slider.gd" id="5_ej6q0"]
 
-[node name="Settings" type="Panel" node_paths=PackedStringArray("button_sound")]
+[node name="Settings" type="Panel" node_paths=PackedStringArray("button_sound", "master_slider", "music_slider", "sfx_slider")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,6 +18,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_7a7o5")
 button_sound = NodePath("ButtonSound")
+master_slider = NodePath("Panel/VBoxContainer/master_slider")
+music_slider = NodePath("Panel/VBoxContainer/music_slider")
+sfx_slider = NodePath("Panel/VBoxContainer/sfx_slider")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_a8fms")
@@ -114,4 +117,7 @@ theme_override_fonts/font = ExtResource("2_p7sx6")
 text = "X"
 flat = true
 
+[connection signal="drag_ended" from="Panel/VBoxContainer/master_slider" to="." method="_on_master_slider_drag_ended"]
+[connection signal="drag_ended" from="Panel/VBoxContainer/music_slider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="drag_ended" from="Panel/VBoxContainer/sfx_slider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="pressed" from="Panel/PanelContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -15,7 +15,7 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	print("GROUPS: ", body.get_groups())
+	#print("GROUPS: ", body.get_groups())
 	if body.is_in_group("player"):
-		print("YOU LOSE")
+		#print("YOU LOSE")
 		body.lose()

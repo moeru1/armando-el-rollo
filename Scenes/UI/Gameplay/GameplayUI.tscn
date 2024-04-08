@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dgcxg6jlk3qox" path="res://Assets/UI/Botones sin fondo/puntos.png" id="3_6tdo5"]
 [ext_resource type="Texture2D" uid="uid://uuma8s281h3u" path="res://Assets/UI/Botones sin fondo/pausa.png" id="5_bfjnj"]
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("score_label", "distance_label")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("score_label", "distance_label", "high_score_label")]
 script = ExtResource("1_3g2n1")
 score_label = NodePath("High_Socreboard/Roll_panel/GridContainer/ScoreLabel")
 distance_label = NodePath("Current_Socreboard/Score_panel/DistanceLabel")
+high_score_label = NodePath("High_Socreboard/Score_panel/HighDistanceLabel")
 
 [node name="High_Socreboard" type="GridContainer" parent="."]
 anchors_preset = 1

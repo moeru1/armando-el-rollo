@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cu58b124nlfdj"]
+[gd_scene load_steps=15 format=3 uid="uid://cu58b124nlfdj"]
 
 [ext_resource type="Script" path="res://LoadingScreens/menu.gd" id="1_simqx"]
 [ext_resource type="Texture2D" uid="uid://cpa61qb7upccd" path="res://Assets/UI/Fondos/main_menu.png" id="2_7jgfj"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cvwsg26wpp2xo" path="res://Assets/UI/Botones sin fondo/salir.png" id="9_kygyx"]
 [ext_resource type="AudioStream" uid="uid://g2i1c50yw2pg" path="res://Assets/Audio/Soundtrack/Armando_Titlescreen_ost.ogg" id="10_md3nl"]
 [ext_resource type="PackedScene" uid="uid://bgx6bnxgheyai" path="res://LoadingScreens/settings.tscn" id="11_trlc5"]
-[ext_resource type="Script" path="res://LoadingScreens/settings.gd" id="12_pof8w"]
 [ext_resource type="StyleBox" uid="uid://dcegapm0nemg0" path="res://LoadingScreens/settings.tres" id="13_1vddg"]
 [ext_resource type="FontFile" uid="uid://cuau5ds5vegt0" path="res://Assets/UI/Bungee-Regular.ttf" id="14_e2lyg"]
 [ext_resource type="Theme" uid="uid://n8d1v8f1no87" path="res://Scenes/UI/theme.tres" id="15_wtiid"]
@@ -116,7 +115,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("12_pof8w")
 
 [node name="Panel" type="Panel" parent="NotAvailable"]
 layout_mode = 1

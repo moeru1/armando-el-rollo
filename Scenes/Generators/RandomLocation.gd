@@ -25,7 +25,7 @@ func random_green():
 	return obj
 
 func random_paper():
-	print("PAPER SPAWNED!!!!")
+	#print("PAPER SPAWNED!!!!")
 	var obj = paper_scene.instantiate()
 	obj.position.x = 19
 	return obj

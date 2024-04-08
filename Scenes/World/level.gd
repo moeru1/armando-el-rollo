@@ -5,8 +5,6 @@ var active: bool = false
 
 var acceleration = 0.001
 
-#coment
-
 func _process(delta):
 	if active:
 		GlobalValues.speed_modif += acceleration
