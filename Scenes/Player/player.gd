@@ -98,7 +98,6 @@ func _create_timer(time_sec: float):
 	var timer = Timer.new()
 	timer.autostart = true
 	timer.one_shot = true 
-	timer.wait_time = 5.0
-	timer.start()
+	timer.wait_time = time_sec
 
 	return timer
