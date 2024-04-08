@@ -21,6 +21,7 @@ boot_splash/show_image=false
 GlobalValues="*res://Global/GlobalValues.gd"
 LoadManager="*res://Global/LoadManager.gd"
 ConfigFileHandler="*res://Global/ConfigFileHandler.gd"
+SaveHandler="*res://Global/SaveHandler.gd"
 
 [input]
 

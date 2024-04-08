@@ -3,7 +3,9 @@ extends CanvasLayer
 @onready var soundtrack_player: AudioStreamPlayer = $Soundtrack
 @onready var settings_panel: Panel = $Settings
 @onready var not_avaiable_panel: Panel = $NotAvailable
+
 func _ready():
+	SaveHandler.load_data()
 	soundtrack_player.play()
 
 func _on_play_button_pressed():
