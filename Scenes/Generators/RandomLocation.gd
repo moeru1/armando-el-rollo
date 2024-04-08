@@ -5,9 +5,15 @@ var cacti_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/cacti.tsc
 var green_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/green_bean.tscn")
 var paper_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/toilet_paper.tscn")
 var chancla_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/chancla.tscn")
+var huacal_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/huacal.tscn")
 
 func random_cacti():
 	var obj = cacti_scene.instantiate()
+	obj.position.x = 19
+	return obj
+
+func random_huacal():
+	var obj = huacal_scene.instantiate()
 	obj.position.x = 19
 	return obj
 

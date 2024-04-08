@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk2u0pj6e6hnn"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/obstacle.gd" id="1_rjr4i"]
+[ext_resource type="ArrayMesh" uid="uid://bpc43khrvfpir" path="res://Assets/Imports/Huacal/huacal.res" id="2_dck1a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xg5oc"]
+size = Vector3(2.49199, 1.14941, 2.23107)
+
+[node name="Huacal" type="Area3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.697336, -0.061009, 0, 0.061009, 0.697336, 0, 0.17, 0)
+collision_layer = 9
+collision_mask = 8
+script = ExtResource("1_rjr4i")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.426783, 0, 1.43454, 0, 1.49668, 0, -1.43454, 0, 0.426783, 0.0442994, -0.117992, 0.00646989)
+mesh = ExtResource("2_dck1a")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.756643, 0, 0.574448, 0, 0.95, 0, -0.574448, 0, -0.756643, -0.0100069, 0.481045, -0.0789926)
+shape = SubResource("BoxShape3D_xg5oc")
+
+[connection signal="body_entered" from="." to="." method="_on_area_3d_body_entered"]

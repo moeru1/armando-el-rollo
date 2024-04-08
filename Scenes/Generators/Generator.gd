@@ -20,7 +20,7 @@ func spawn_tiles():
 	var rand_int =  randi_range(1,100)
 	var obstacle = null
 	if (rand_int <= cacti_probability):
-		obstacle = random_location.random_cacti
+		obstacle = random_location.random_cacti if (rand_int % 2 == 0) else random_location.random_huacal
 	elif (cacti_probability < rand_int && rand_int <= cacti_probability + paper_probability):
 		#print("SELECTED PAPER!!!")
 		obstacle = random_location.random_paper
