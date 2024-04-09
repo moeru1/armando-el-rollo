@@ -65,6 +65,7 @@ func lose():
 		GlobalValues.top_distance_traveled = distance_traveled
 	GlobalValues.distance_traveled = distance_traveled
 	GlobalValues.score = score
+	GlobalValues.speed_modif = 1.0
 	SaveHandler.save_data()
 	loss_screen_sceme.update_labels()
 	loss_screen_sceme.show()
