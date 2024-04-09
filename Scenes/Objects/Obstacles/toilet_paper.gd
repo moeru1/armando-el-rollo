@@ -8,7 +8,7 @@ var new_speed: float
 func _process(delta):
 	sprite.position.y += sin(delta)*0.15
 	new_speed = speed*GlobalValues.speed_modif
-	new_speed = clamp(new_speed, 1, 13)
+	new_speed = clamp(new_speed, 1, 20)
 	position.x -= new_speed*delta
 	if position.x < -del_distance:
 		queue_free()

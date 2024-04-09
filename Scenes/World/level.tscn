@@ -68,7 +68,7 @@ shadow_enabled = true
 script = ExtResource("2_7v2ls")
 amount = 20
 spawn_objects = true
-cacti_probability = 85
+cacti_probability = 55
 paper_probability = 10
 
 [node name="SpawnCooldown" type="Timer" parent="Generators/ObstacleGenerator"]
@@ -84,9 +84,8 @@ background_arr = Array[PackedScene]([ExtResource("4_jocip"), ExtResource("5_nute
 [node name="FallingGenerator" type="Node3D" parent="Generators"]
 script = ExtResource("4_ydstg")
 spawn_objects = true
-
-[node name="SpawnCooldown" type="Timer" parent="Generators/FallingGenerator"]
-autostart = true
+green_probability = 60
+chancla_probability = 4
 
 [node name="Timer" type="Timer" parent="Generators"]
 wait_time = 4.0
@@ -161,7 +160,6 @@ collision_layer = 8
 collision_mask = 22
 
 [connection signal="timeout" from="Generators/ObstacleGenerator/SpawnCooldown" to="Generators/ObstacleGenerator" method="_on_spawn_cooldown_timeout"]
-[connection signal="timeout" from="Generators/FallingGenerator/SpawnCooldown" to="Generators/FallingGenerator" method="_on_spawn_cooldown_timeout"]
 [connection signal="timeout" from="Generators/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Generators/Timer" to="Generators/ObstacleGenerator" method="_on_timer_timeout"]
 [connection signal="timeout" from="Generators/Timer" to="Generators/BackgroundGenerator" method="_on_timer_timeout"]
