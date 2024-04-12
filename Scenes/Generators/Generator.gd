@@ -16,6 +16,7 @@ var random_location: RandomLocation = RandomLocation.new()
 
 var obstacle_types: Array[Callable]  = [random_location.random_cacti, random_location.random_paper]
 var obs_count: int = 4
+var paper_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/toilet_paper.tscn")
 
 func spawn_tiles():
 	var rand_int =  randi_range(1,100)
@@ -28,6 +29,15 @@ func spawn_tiles():
 		obstacle = random_location.random_paper
 	if obstacle != null:
 		var obs_instance = obstacle.call()
+		var num_toilet_paper = randi_range(0,3)
+		var distance_to_obstacle = 2
+		var available_positions = [-3, -2, 2, 3, 4]
+		available_positions.shuffle()
+		for i in range(num_toilet_paper):
+			var toilet_paper = random_location.random_paper()
+			toilet_paper.position.x += available_positions[i] + 3
+			add_child(toilet_paper)
+		obs_instance.position.x += 3
 		add_child(obs_instance)
 		
 func _on_timer_timeout():
