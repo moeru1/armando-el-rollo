@@ -1,11 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3u0uvlxjgisc"]
+[gd_scene load_steps=32 format=3 uid="uid://d3u0uvlxjgisc"]
 
 [ext_resource type="Script" path="res://Scenes/World/level.gd" id="1_wrax7"]
 [ext_resource type="Script" path="res://Scenes/Generators/Generator.gd" id="2_7v2ls"]
+[ext_resource type="Script" path="res://Model/Spawnable/SpawnableProb.gd" id="3_3im2q"]
 [ext_resource type="Script" path="res://Scenes/Generators/Background_Generator.gd" id="3_krx3s"]
+[ext_resource type="PackedScene" uid="uid://dri62xj24ce70" path="res://Assets/Models/Cactus.glb" id="4_enb72"]
 [ext_resource type="PackedScene" uid="uid://dg7ay1l4vduuv" path="res://Scenes/Background/cielo.tscn" id="4_jocip"]
 [ext_resource type="Script" path="res://Scenes/Generators/FallingGenerator.gd" id="4_ydstg"]
+[ext_resource type="Script" path="res://Model/Spawnable/Spawnable.gd" id="5_ik2p2"]
 [ext_resource type="PackedScene" uid="uid://blgvneie1othk" path="res://Scenes/Background/edificios.tscn" id="5_nutef"]
+[ext_resource type="PackedScene" uid="uid://dk2u0pj6e6hnn" path="res://Scenes/Objects/Obstacles/huacal.tscn" id="6_it5wh"]
 [ext_resource type="PackedScene" uid="uid://bxvqk2dcahnnh" path="res://Scenes/Background/niebla_1.tscn" id="6_pjnd0"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://Assets/textures/grids/Dark/texture_05.png" id="6_v2xlb"]
 [ext_resource type="PackedScene" uid="uid://bifgidv7plvf7" path="res://Scenes/Player/armando.tscn" id="6_weiv8"]
@@ -27,6 +31,28 @@ sky = SubResource("Sky_hl17u")
 tonemap_mode = 2
 glow_enabled = true
 glow_intensity = 1.12
+
+[sub_resource type="Resource" id="Resource_ggjrr"]
+script = ExtResource("5_ik2p2")
+aabb = AABB(0, 0, 0, 1, 1, 0)
+scene = ExtResource("4_enb72")
+default_position = Vector3(19, 0, 0)
+
+[sub_resource type="Resource" id="Resource_dpp0m"]
+script = ExtResource("3_3im2q")
+spawnable = SubResource("Resource_ggjrr")
+spawn_probability = 0
+
+[sub_resource type="Resource" id="Resource_yfu8q"]
+script = ExtResource("5_ik2p2")
+aabb = AABB(0, 0, 0, 2, 1, 0)
+scene = ExtResource("6_it5wh")
+default_position = Vector3(19, 0, 0)
+
+[sub_resource type="Resource" id="Resource_q2un1"]
+script = ExtResource("3_3im2q")
+spawnable = SubResource("Resource_yfu8q")
+spawn_probability = 0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nhifw"]
 data = PackedVector3Array(-0.5, 5, 0.5, 0.5, 5, 0.5, -0.5, -5, 0.5, 0.5, 5, 0.5, 0.5, -5, 0.5, -0.5, -5, 0.5, 0.5, 5, -0.5, -0.5, 5, -0.5, 0.5, -5, -0.5, -0.5, 5, -0.5, -0.5, -5, -0.5, 0.5, -5, -0.5, 0.5, 5, 0.5, 0.5, 5, -0.5, 0.5, -5, 0.5, 0.5, 5, -0.5, 0.5, -5, -0.5, 0.5, -5, 0.5, -0.5, 5, -0.5, -0.5, 5, 0.5, -0.5, -5, -0.5, -0.5, 5, 0.5, -0.5, -5, 0.5, -0.5, -5, -0.5, 0.5, 5, 0.5, -0.5, 5, 0.5, 0.5, 5, -0.5, -0.5, 5, 0.5, -0.5, 5, -0.5, 0.5, 5, -0.5, -0.5, -5, 0.5, 0.5, -5, 0.5, -0.5, -5, -0.5, 0.5, -5, 0.5, 0.5, -5, -0.5, -0.5, -5, -0.5)
@@ -70,6 +96,7 @@ amount = 20
 spawn_objects = true
 cacti_probability = 55
 paper_probability = 10
+spawnables = Array[ExtResource("3_3im2q")]([SubResource("Resource_dpp0m"), SubResource("Resource_q2un1")])
 
 [node name="SpawnCooldown" type="Timer" parent="Generators/ObstacleGenerator"]
 autostart = true

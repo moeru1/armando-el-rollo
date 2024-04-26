@@ -9,33 +9,37 @@ extends Node3D
 @export var huacal_probability: int = 25
 @export var paper_probability: int = 30
 @export var speed: float = 6.0
+@export var spawnables: Array[SpawnableProb]
 
+var spawnable_paper: Spawnable = preload("res://Data/Spawnable/paper.tres")
 var active: bool = false
 var countdown:int = 0
-var random_location: RandomLocation = RandomLocation.new()
 
-var obstacle_types: Array[Callable]  = [random_location.random_cacti, random_location.random_paper]
 var obs_count: int = 4
-var paper_scene: PackedScene = preload("res://Scenes/Objects/Obstacles/toilet_paper.tscn")
 
 func spawn_tiles():
 	var rand_int =  randi_range(1,100)
 	var obstacle = null
-	if rand_int <= cacti_probability:
-		obstacle = random_location.random_cacti
-	elif rand_int <= cacti_probability + huacal_probability:
-		obstacle = random_location.random_huacal
-	elif (rand_int <= cacti_probability + huacal_probability + paper_probability):
-		obstacle = random_location.random_paper
+	for spawnable in spawnables:
+		var prob = spawnable.spawn_probability
+		if rand_int <= prob:
+			obstacle = spawnable.spawnable
+			break
+		rand_int -= prob
+	
 	if obstacle != null:
-		var obs_instance = obstacle.call()
+		var obs_instance = obstacle.instantiate()
 		var num_toilet_paper = randi_range(0,3)
 		var distance_to_obstacle = 2
-		var available_positions = [-3, -2, 2, 3, 4]
+		var available_positions = [-3, -2, -1, 1, 2]
 		available_positions.shuffle()
 		for i in range(num_toilet_paper):
-			var toilet_paper = random_location.random_paper()
-			toilet_paper.position.x += available_positions[i] + 3
+			var toilet_paper = spawnable_paper.instantiate()
+			var position = available_positions[i]
+			var half_size: float = obstacle.aabb.size.x / 2
+			#toilet_paper.position.x += half_size if position > 0 else -half_size
+			toilet_paper.position.x += available_positions[i]
+			toilet_paper.position.x += 3
 			add_child(toilet_paper)
 		obs_instance.position.x += 3
 		add_child(obs_instance)

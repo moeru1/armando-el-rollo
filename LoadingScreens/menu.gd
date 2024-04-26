@@ -11,6 +11,7 @@ func _ready():
 func _on_play_button_pressed():
 	button_sound.play()
 	soundtrack_player.stop()
+	print("LOADING level")
 	LoadManager.load_scene("res://Scenes/World/level.tscn")
 
 

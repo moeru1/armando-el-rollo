@@ -23,12 +23,16 @@ func load_scene(scene_path: String) -> void:
 	self.progress_changed.connect(new_loading_screen._update_progress_bar)
 	self.load_done.connect(new_loading_screen._start_outro_animation)
 	#await Signal(new_loading_screen, "loading_screen_has_full_coverage")
+	print("LOADING STARTED")
 	start_load()
 	
 func start_load() -> void:
+	print("START LOADING")
 	var state = ResourceLoader.load_threaded_request(_scene_path, "", use_sub_threads)
 	if state == OK:
 		set_process(true)
+	else:
+		print("ERROR:" + state)
 
 func _process(delta):
 	var load_status = ResourceLoader.load_threaded_get_status(_scene_path, _progress)
@@ -42,4 +46,5 @@ func _process(delta):
 			_loaded_resource = ResourceLoader.load_threaded_get(_scene_path)
 			emit_signal("progress_changed", 1.0)
 			emit_signal("load_done")
+			print("LOADING DONE")
 			get_tree().change_scene_to_packed(_loaded_resource)

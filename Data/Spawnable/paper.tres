@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Spawnable" load_steps=3 format=3 uid="uid://c3s47p4es5dgx"]
+
+[ext_resource type="Script" path="res://Model/Spawnable/Spawnable.gd" id="1_4mblj"]
+[ext_resource type="PackedScene" uid="uid://b1sjrgr8jb4nf" path="res://Scenes/Objects/Obstacles/toilet_paper.tscn" id="1_uh4es"]
+
+[resource]
+script = ExtResource("1_4mblj")
+aabb = AABB(0, 0, 0, 0, 0, 0)
+scene = ExtResource("1_uh4es")
