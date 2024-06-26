@@ -1,10 +1,12 @@
 extends CanvasLayer
 @onready var button_sound = $ButtonSound
+@export var gameplay_ui: CanvasLayer
 
 func _on_continue_button_pressed():
 	button_sound.play()
 	get_tree().paused = false
 	hide()
+	gameplay_ui.show()
 
 
 func _on_settings_button_pressed():

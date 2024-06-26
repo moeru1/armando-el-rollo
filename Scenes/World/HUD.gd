@@ -11,5 +11,6 @@ func _process(delta):
 
 
 func _on_pause_pressed():
+	hide()
 	get_tree().paused = true
 	$"../PauseMenu".show()
