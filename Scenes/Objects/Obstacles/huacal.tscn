@@ -13,7 +13,7 @@ collision_mask = 8
 script = ExtResource("1_rjr4i")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.426783, 0, 1.43454, 0, 1.49668, 0, -1.43454, 0, 0.426783, 0.0442994, -0.117992, 0.00646989)
+transform = Transform3D(0.426783, 0, 1.43454, 1.49012e-08, 1.49668, -3.72529e-09, -1.43454, 7.45058e-08, 0.426783, 0.0442994, -0.117992, 0.00646989)
 mesh = ExtResource("2_dck1a")
 skeleton = NodePath("")
 

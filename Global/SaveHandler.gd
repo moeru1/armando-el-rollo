@@ -5,7 +5,6 @@ func _ready():
 		save_data()
 
 func save_data():
-	print("saved data")
 	var saved_data: SavedData = SavedData.new()
 	saved_data.high_score = GlobalValues.top_distance_traveled
 	ResourceSaver.save(saved_data, "user://savedata.tres")

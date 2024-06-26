@@ -1,11 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpmttw235hsdf"]
+[gd_scene load_steps=9 format=3 uid="uid://bpmttw235hsdf"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/Obstacles/obstacle.gd" id="1_fb7sp"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_os4wo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bjob6"]
 size = Vector3(4.0625, 1.74814, 0.749863)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aruhx"]
+render_priority = 0
+shader = ExtResource("2_os4wo")
+shader_parameter/outline_color = null
+shader_parameter/outline_width = 2.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ofk6"]
+next_pass = SubResource("ShaderMaterial_aruhx")
 albedo_color = Color(0.215686, 0.529412, 0, 1)
 rim_tint = 0.27
 ao_light_affect = 1.0
@@ -68,7 +76,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1073
 shape = SubResource("BoxShape3D_bjob6")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.682603, 0, 0.0714332, 0, 0.68633, 0, -0.0714332, 0, 0.682603, 0, 0, 0)
+transform = Transform3D(0.682603, 0, 0.0714332, 0, 0.68633, 0, -0.0714332, 0, 0.682603, 0.0053558, 1.83399e-07, -0.00798482)
 material_override = SubResource("StandardMaterial3D_3ofk6")
 mesh = SubResource("ArrayMesh_5krok")
 skeleton = NodePath("")
