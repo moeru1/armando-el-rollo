@@ -33,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 1
@@ -45,61 +46,79 @@ texture = ExtResource("2_7jgfj")
 expand_mode = 1
 
 [node name="PlayButton" type="TextureButton" parent="Panel"]
-layout_mode = 0
-offset_left = 416.0
-offset_top = 112.0
-offset_right = 757.0
-offset_bottom = 459.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -200.0
+offset_right = 187.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("4_w2mws")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="QuestsButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = -28.0
-offset_right = 286.0
-offset_bottom = 243.0
+offset_left = 34.0
+offset_top = -25.0
+offset_right = 321.0
+offset_bottom = 246.0
 texture_normal = ExtResource("5_xs535")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="StoreButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 398.0
-offset_right = 286.0
-offset_bottom = 669.0
+offset_left = 40.0
+offset_top = 401.0
+offset_right = 327.0
+offset_bottom = 672.0
 texture_normal = ExtResource("6_v6eqa")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ProfileButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
-offset_left = -1.0
+offset_left = 33.0
 offset_top = 184.0
-offset_right = 286.0
+offset_right = 320.0
 offset_bottom = 455.0
 texture_normal = ExtResource("7_lf0ln")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="SettingsButton" type="TextureButton" parent="Panel"]
-layout_mode = 0
-offset_left = 990.0
-offset_top = 19.0
-offset_right = 1118.0
-offset_bottom = 135.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -187.0
+offset_top = 27.0
+offset_right = -59.0
+offset_bottom = 143.0
+grow_horizontal = 0
 texture_normal = ExtResource("8_qjq0e")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="ExitButton" type="TextureButton" parent="Panel"]
-layout_mode = 0
-offset_left = 944.0
-offset_top = 464.0
-offset_right = 1109.0
-offset_bottom = 609.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -189.0
+offset_right = -47.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
 texture_normal = ExtResource("9_kygyx")
 ignore_texture_size = true
 stretch_mode = 5
