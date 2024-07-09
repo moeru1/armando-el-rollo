@@ -69,9 +69,13 @@ libraries = {
 autoplay = "start_load"
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1163.0
-offset_bottom = 675.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_t85pe")
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="Panel"]
 visible = false
