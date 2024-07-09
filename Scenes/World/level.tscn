@@ -68,8 +68,6 @@ shadow_enabled = true
 script = ExtResource("2_7v2ls")
 amount = 20
 spawn_objects = true
-cacti_probability = 55
-paper_probability = 10
 
 [node name="SpawnCooldown" type="Timer" parent="Generators/ObstacleGenerator"]
 autostart = true
